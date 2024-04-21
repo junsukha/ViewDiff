@@ -75,15 +75,15 @@ def main(
             n_prompts = len(prompts)
             prompts = random.sample(
                 prompts,
-                k=min(n_prompts, max_prompts_per_sequence),
+                k=min(n_prompts, max_prompts_per_sequence), # 2
             )
 
             # generate + save next images
             image_counter = 0
-            for p in prompts:
+            for p in prompts: # for each prompt (2 prompts per sequence) generate 2 images => 4 images per sequence
                 images = pipe(p, num_images_per_prompt=num_images_per_prompt).images
                 for img in images:
-                    image_name = f"{s}_{image_counter}"
+                    image_name = f"{s}_{image_counter}" # /co3d_data/dreambooth_prior_presservation_dataset/hydrant/*.jpg
                     out_file = os.path.join(category_out, f"{image_name}.jpg")
                     image_to_prompt[image_name] = p
                     with open(out_file, "wb") as f:
@@ -91,7 +91,7 @@ def main(
                     image_counter += 1
 
         # save image_to_prompt file
-        image_to_prompt_file = os.path.join(category_out, "image_to_prompt.json")
+        image_to_prompt_file = os.path.join(category_out, "image_to_prompt.json") # /co3d_data/dreambooth_prior_presservation_dataset/hydrant/image_to_prompt.json
         with open(image_to_prompt_file, "w") as f:
             json.dump(image_to_prompt, f, indent=4)
 

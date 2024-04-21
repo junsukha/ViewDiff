@@ -373,7 +373,7 @@ def collapse_prompt_to_batch_dim(prompt: List[str], k: int):
 
 
 def collapse_tensor_to_batch_dim(x: torch.Tensor):
-    batch_size, k = x.shape[:2]
+    batch_size, k = x.shape[:2] # torch.Size([1, 3, 3, 3])
     return batch_size, x.view(batch_size * k, 1, *x.shape[2:]).contiguous()
 
 

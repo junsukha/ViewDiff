@@ -702,6 +702,7 @@ class CustomStableDiffusionPipeline(
         )
 
         # 5.a check if known_images are provided as input
+        # timestep will be set to 0 for known images in self.unet forward function
         n_known_images = 0
         if known_images is not None:
             n_known_images = known_images.shape[0]
@@ -724,7 +725,7 @@ class CustomStableDiffusionPipeline(
                 latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
 
                 # predict the noise residual
-                output = self.unet(
+                output = self.unet( # UNet2DConditionCrossFrameInExistingAttnModel
                     latent_model_input,
                     t,
                     encoder_hidden_states=prompt_embeds,
@@ -733,8 +734,11 @@ class CustomStableDiffusionPipeline(
                     n_known_images=n_known_images if known_images is not None else 0,
                     n_images_per_batch=n_images_per_batch if known_images is not None else 0,
                 )
+                # print(f'output: {output}')
                 model_pred = output.unet_sample
-
+                # print(f'model_pred shape: {model_pred.shape}')
+                # exit(0)
+                
                 # perform guidance
                 if do_classifier_free_guidance:
                     noise_pred_uncond, noise_pred_text = model_pred.chunk(2)

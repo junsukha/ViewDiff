@@ -3,10 +3,12 @@
 
 export CO3DV2_DATASET_ROOT=$1
 
+#--finetune-config.io.resume_from_checkpoint "/users/jha38/github/ViewDiff/outputs/train/hydrant/50_sequences/subset_all/input_3/train/train_hydrant/checkpoint-6000" \
 accelerate launch --mixed_precision="no" -m viewdiff.train \
 --finetune-config.io.pretrained_model_name_or_path $2 \
 --finetune-config.io.output_dir $3 \
---finetune-config.io.experiment_name "train_teddybear" \
+--finetune_config.io.automatic_checkpoint_resume \
+--finetune-config.io.experiment_name "train_$4" \
 --finetune-config.training.mixed_precision "no" \
 --finetune-config.training.dataloader_num_workers "0" \
 --finetune-config.training.num_train_epochs "1000" \
@@ -54,11 +56,11 @@ accelerate launch --mixed_precision="no" -m viewdiff.train \
 --dataset-config.batch.image_height "256" \
 --dataset-config.batch.other_selection "mix" \
 --validation-dataset-config.co3d-root $CO3DV2_DATASET_ROOT \
---validation-dataset-config.category "teddybear" \
+--validation-dataset-config.category $4 \
 --validation-dataset-config.max_sequences "1" \
 --validation-dataset-config.batch.load_recentered \
 --validation-dataset-config.batch.use_blip_prompt \
 --validation-dataset-config.batch.crop "random" \
 --validation-dataset-config.batch.image_width "256" \
 --validation-dataset-config.batch.image_height "256" \
---validation-dataset-config.dataset_args.n_frames_per_sequence "3"
+--validation-dataset-config.dataset_args.n_frames_per_sequence "3" # 5 in normal training

@@ -524,7 +524,7 @@ def setup_model_and_optimizer(
     else:
         if (
             finetune_config.cross_frame_attention.mode == "add_in_existing_block"
-            or finetune_config.cross_frame_attention.mode == "pretrained"
+            or finetune_config.cross_frame_attention.mode == "pretrained" # this is the case when using train_small.sh
         ):
             # add non-vol-rend params (including the existing unet params)
             params_without_vol_rend = unet.get_params_without_volume_rendering()
@@ -760,6 +760,7 @@ def load_checkpoint(finetune_config: FinetuneConfig, accelerator: Accelerator, n
             num_update_steps_per_epoch * finetune_config.optimizer.gradient_accumulation_steps
         )
 
+    print(f"CHECK!!!!  global step: {global_step}, first_epoch: {first_epoch}, resume_step: {resume_step}")
     return global_step, first_epoch, resume_step
 
 

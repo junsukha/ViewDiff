@@ -1,5 +1,5 @@
 # Copyright (c) Meta Platforms, Inc. and affiliates.
-
+# chec
 from typing import Optional, List, Dict
 
 import os
@@ -80,6 +80,7 @@ def train_and_test(
     finetune_config: FinetuneConfig,
     validation_dataset_config: CO3DConfig,
 ):
+
     # manually update required fields in the config
     finetune_config.training = check_local_rank(finetune_config.training)
     dataset_config.batch.n_parallel_images = finetune_config.model.n_input_images
@@ -106,7 +107,9 @@ def train_and_test(
             print("Found a checkpoint to resume training from automatically:", finetune_config.io.resume_from_checkpoint)
 
     # Load scheduler, tokenizer and models.
-    noise_scheduler, tokenizer, text_encoder, vae, unet = load_models(
+    # unet here is UNet2DConditionModel. Will instantiate UNet2DConditionCrossFrameAttnModel class from UNet2DConditionModel later
+    # when calling update_model function.
+    noise_scheduler, tokenizer, text_encoder, vae, unet = load_models( # stabilityai/stable-diffusion-2-1-base
         finetune_config.io.pretrained_model_name_or_path, revision=finetune_config.io.revision
     )
 
@@ -127,9 +130,11 @@ def train_and_test(
         logger,
         unet_lora_parameters=unet_lora_parameters,
     )
+    
     train_dataloader, validation_dataloader, n_train_examples, train_dreambooth_dataloader = setup_train_val_dataloaders(
         finetune_config, dataset_config, validation_dataset_config, accelerator
     )
+    
     (
         total_batch_size,
         num_update_steps_per_epoch,
@@ -150,6 +155,7 @@ def train_and_test(
         unet,
         train_dreambooth_dataloader=train_dreambooth_dataloader
     )
+    
     if accelerator.is_main_process:
         validation_batch = next(iter(validation_dataloader))  # always use fixed validation_batch
     if train_dreambooth_dataloader is not None:
@@ -211,7 +217,9 @@ def train_and_test(
                 ema_unet.store(unet.parameters())
                 ema_unet.copy_to(unet.parameters())
             # The models need unwrapping because for compatibility in distributed training mode.
-            pipeline = CustomStableDiffusionPipeline.from_pretrained(
+            # pipeline is only used in the validation loop and is not part of the training loop because, I think, we train only
+            # the UNet and not the pipeline.
+            pipeline = CustomStableDiffusionPipeline.from_pretrained( 
                 finetune_config.io.pretrained_model_name_or_path,
                 unet=accelerator.unwrap_model(unet),
                 text_encoder=accelerator.unwrap_model(text_encoder),
@@ -274,7 +282,7 @@ def train_and_test(
                 )
 
             # get dreambooth batch
-            if train_dreambooth_dataloader is not None and (global_step % finetune_config.training.dreambooth_prior_preservation_every_nth) == 0:
+            if train_dreambooth_dataloader is not None and (global_step % finetune_config.training.dreambooth_prior_preservation_every_nth) == 0: # finetune_config.training.dreambooth_prior_preservation_every_nth is 1 when train_small.sh is used
                 # get batch
                 dreambooth_batch = next(train_dreambooth_dataloader_iter, dreambooth_iter_sentinel)
                 if dreambooth_batch is dreambooth_iter_sentinel:
@@ -286,6 +294,9 @@ def train_and_test(
             else:
                 dreambooth_batch = None
 
+            # print(f' what is batch: {batch}')
+            # exit(0)
+            
             # do training step
             avg_step_losses, acc_step, loss = train_step(
                 accelerator=accelerator,
@@ -382,17 +393,17 @@ def update_model(finetune_config: FinetuneConfig, unet: UNet2DConditionModel):
             finetune_config.cross_frame_attention.mode == "pretrained"
             or finetune_config.cross_frame_attention.mode == "add_in_existing_block"
         ):
-            if finetune_config.cross_frame_attention.mode == "pretrained":
+            if finetune_config.cross_frame_attention.mode == "pretrained": # this is the case for train_small.sh
                 # overwrite the settings for cfa to not create the cfa layers
                 # instead we want to re-use the sa layers for it
                 if finetune_config.cross_frame_attention.unproj_reproj_mode == "with_cfa":
-                    finetune_config.cross_frame_attention.unproj_reproj_mode = "only_unproj_reproj"
+                    finetune_config.cross_frame_attention.unproj_reproj_mode = "only_unproj_reproj" # "only_unproj_reproj": use the layer instead of cross-frame-attention.
 
             unet = UNet2DConditionCrossFrameInExistingAttnModel.from_source(
                 src=unet,
                 load_weights=True,
                 down_block_types=get_down_block_types(finetune_config.cross_frame_attention.n_cfa_down_blocks),
-                mid_block_type=get_mid_block_type(not finetune_config.cross_frame_attention.no_cfa_in_mid_block),
+                mid_block_type=get_mid_block_type(not finetune_config.cross_frame_attention.no_cfa_in_mid_block), # for tiny monel, this uses cross frame (just like in the original model)
                 up_block_types=get_up_block_types(finetune_config.cross_frame_attention.n_cfa_up_blocks),
                 n_input_images=finetune_config.model.n_input_images,
                 to_k_other_frames=finetune_config.cross_frame_attention.to_k_other_frames,
@@ -469,6 +480,8 @@ def train_step(
         # parse batch
         # collapse K dimension into batch dimension (no concatenation happening)
         batch["prompt"] = collapse_prompt_to_batch_dim(batch["prompt"], finetune_config.model.n_input_images)
+        # print(f'batch["prompt"]: {batch["prompt"]}') # ['a fire hydrant sitting on the ground', 'a fire hydrant sitting on the ground', 'a fire hydrant sitting on the ground']
+        # exit(0)
         batch_size, pose = collapse_tensor_to_batch_dim(batch["pose"])
         _, K = collapse_tensor_to_batch_dim(batch["K"])
         _, intensity_stats = collapse_tensor_to_batch_dim(batch["intensity_stats"])
@@ -506,37 +519,54 @@ def train_step(
 
         # Sample a random timestep for each batch
         N = latents.shape[0]
+        # print(f'latent shape: {latents.shape}') # torch.Size([3, 4, 32, 32]) (n_input_images, channels, height, width) 인듯
         f_min = 0.0  # 0.02
         f_max = 1.0  # 0.98
         t_min = int(f_min * noise_scheduler.config.num_train_timesteps)
         t_max = int(f_max * noise_scheduler.config.num_train_timesteps)
-        timesteps = torch.randint(t_min, t_max, (batch_size,), device=latents.device, dtype=torch.long)
+        timesteps = torch.randint(t_min, t_max, (batch_size,), device=latents.device, dtype=torch.long) # does batch_size refer to the 
+
+        # print(f'Batch size: {batch_size}') # 1
 
         # per default: use same timestep within batch
         timesteps = timesteps.repeat_interleave(finetune_config.model.n_input_images)
 
+        # print(f'timesteps shape: {timesteps.shape}') # torch.Size([3])
+        # exit(0)
+
         # check if some timesteps within the batch will be replaced with 0 (== non-noisy image)
         if not is_dreambooth and finetune_config.training.prob_images_not_noisy > 0:
-            random_p_non_noisy = torch.rand((batch_size, finetune_config.model.n_input_images), device=latents.device, generator=generator)
+            random_p_non_noisy = torch.rand((batch_size, finetune_config.model.n_input_images), device=latents.device, generator=generator) # n_iput_images is the number of images 
             non_noisy_mask = random_p_non_noisy < finetune_config.training.prob_images_not_noisy
+            # print(f'non_noisy_mask: {non_noisy_mask}')
             non_noisy_mask[:, finetune_config.training.max_num_images_not_noisy:] = False
             non_noisy_mask = non_noisy_mask.flatten()
-            timesteps = torch.where(non_noisy_mask, torch.zeros_like(timesteps), timesteps)
+            # print(f'non_noisy_mask: {non_noisy_mask}')
+            timesteps = torch.where(non_noisy_mask, torch.zeros_like(timesteps), timesteps) # In the paper, "Similary, we set t = 0 for all denoising steps..." So t = 0 for the first (max_num_images_not_noisy-1) image(s)
+        # print(f'timesteps: {timesteps}') # [341, 0, 341] 경우, 두번째 이미지만 noise가 없는 경우
+        # print(f'timesteps shape: {timesteps.shape}') # torch.Size([3])
+        # exit(0)
 
         # Sample noise that we'll add to the latents
         noise = torch.randn_like(latents)
 
         # Add noise to the latents according to the noise magnitude at each timestep
         # (this is the forward diffusion process)
-        noisy_latents = noise_scheduler.add_noise(latents, noise, timesteps)
+        noisy_latents = noise_scheduler.add_noise(latents, noise, timesteps) # latent corresponding to t=0 will remain the same, i.e., no noise will be added
+        # print(f'noisy_latents shape: {noisy_latents.shape}') # [3, 4, 32, 32]
+        # exit(0)
 
         # convert prompt to input_ids
+        # batch["prompt"] has the same three prompts repeated for each image in the batch
+        # think this is used for "Unconditional Generation"
         batch["input_ids"] = tokenize_captions(tokenizer, batch["prompt"]).to(latents.device)
 
         # Get the text embedding for conditioning.
         encoder_hidden_states = text_encoder(batch["input_ids"])[0]
 
         # Conditioning dropout to support classifier-free guidance during inference.
+        # print(f'finetune_config.model.conditioning_dropout_prob: {finetune_config.model.conditioning_dropout_prob}') # 0.1
+        # exit(0)
         if finetune_config.model.conditioning_dropout_prob is not None:
             random_p = torch.rand(N, device=latents.device, generator=generator)
             # Sample masks for the edit prompts.
@@ -556,21 +586,28 @@ def train_step(
         else:
             raise ValueError(f"Unknown prediction type {noise_scheduler.config.prediction_type}")
 
+
+        # print(f'encoder_hidden_states: {encoder_hidden_states.shape}') # torch.Size([3, 77, 1024]) (batch_size, seq_len, hidden_size) where seq_len is the length of prompt (fixed to 77)
+        # exit(0)
         # Predict w/ unet
         output = unet(
             noisy_latents,
             timesteps,
-            encoder_hidden_states,
+            encoder_hidden_states, # has the same three prompts repeated for each image in the batch
             cross_attention_kwargs=cross_attention_kwargs,
         )
+        # print(f'output: {output}')
         unet_pred = output.unet_sample
+        # print(f'unet_pred: {unet_pred.shape}') # torch.Size([3, 4, 32, 32])
+        # exit(0)
         rendered_depth_per_layer = output.rendered_depth
         rendered_mask_per_layer = output.rendered_mask
 
         # only compute losses for those batches that have non-zero timestep
         # the other images are perfect (no noise), so predicting noise is ambiguous and we do not want to receive gradients for it
-        # instead, those images are only used as conditioning input in the cfa and proj layers
+        # instead, those images are only used as conditioning input in the cfa and proj layers. 여기서 those images는 noise가 없는 이미지를 의미하는 것 같다.
         if not is_dreambooth and finetune_config.training.prob_images_not_noisy > 0:
+            # make non noisy latents of unet_pred_target same as non noisy latents of unet_pred so that loss is zero for non noisy images/latents
             unet_pred_target[non_noisy_mask] = unet_pred[non_noisy_mask].detach().clone().to(unet_pred_target)
 
         # compute unet-pred-loss
@@ -578,6 +615,7 @@ def train_step(
         loss = unet_pred_acc.mean()
         unet_pred_acc = unet_pred_acc.mean(dim=(1, 2, 3))
 
+        # I think this is prior preservation loss
         if is_dreambooth:
             loss = finetune_config.training.dreambooth_prior_preservation_loss_weight * loss
 
@@ -659,6 +697,7 @@ def train_step(
 
     if dreambooth_batch is not None:
         # update model cfa config to process a single image
+        # this means that cfa is treated as self-attenion layer
         old_n_input_images = finetune_config.model.n_input_images
         old_to_k_other_frames = finetune_config.cross_frame_attention.to_k_other_frames
         old_n_novel_images = finetune_config.cross_frame_attention.n_novel_images
@@ -749,9 +788,15 @@ def test_step(
         _, known_images = collapse_tensor_to_batch_dim(batch["known_images"])
         known_images = known_images.to(pipeline.device)
         known_images = known_images.squeeze(1)
-    else:
+    else: # this is the case when validation_batch is used I think
         known_images = None
-
+    
+    # print(f"batch in test mode: {batch}")
+    # print(f'known_images: {known_images}') # None when validation_batch is used
+    # print(f'known_images shape: {known_images.shape}')
+    # exit(0)
+    
+    
     pose = pose.to(pipeline.device)
     K = K.to(pipeline.device)
     intensity_stats = intensity_stats.to(pipeline.device)

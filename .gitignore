@@ -10,3 +10,7 @@ __pycache__/
 
 *.pt
 *egg-info/
+
+co3d_data
+outputs
+vscode-profile.code-profile

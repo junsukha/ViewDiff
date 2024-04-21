@@ -67,7 +67,7 @@ DEFAULT_DOWN_BLOCK_TYPES: Tuple[str] = (
 )
 
 DEFAULT_MID_BLOCK_TYPE: str = UNetMidBlock2DCrossAttn.__name__
-CROSS_FRAME_MID_BLOCK_TYPE: str = UNetMidBlock2DCrossFrameInExistingAttn.__name__
+CROSS_FRAME_MID_BLOCK_TYPE: str = UNetMidBlock2DCrossFrameInExistingAttn.__name__ # this is used for train_small
 
 DEFAULT_UP_BLOCK_TYPES: Tuple[str] = (
     UpBlock2D.__name__,
@@ -77,7 +77,7 @@ DEFAULT_UP_BLOCK_TYPES: Tuple[str] = (
 )
 
 
-def get_down_block_types(n_cross_frame_blocks: int = 3):
+def get_down_block_types(n_cross_frame_blocks: int = 3): # uses 0 for tiny model
     n_total_blocks = len(DEFAULT_DOWN_BLOCK_TYPES)
     n_unchanged_blocks = n_total_blocks - n_cross_frame_blocks
     assert 0 <= n_unchanged_blocks <= n_total_blocks
@@ -88,7 +88,7 @@ def get_down_block_types(n_cross_frame_blocks: int = 3):
     for i in range(start_index, start_index - n_cross_frame_blocks, -1):
         blocks[i] = CrossFrameInExistingAttnDownBlock2D.__name__
 
-    return blocks
+    return blocks # when using sanity model, this will return the same as DEFAULT_DOWN_BLOCK_TYPES
 
 
 def get_up_block_types(n_cross_frame_blocks: int = 3):
@@ -607,7 +607,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
             self.down_blocks.append(down_block)
 
         # mid
-        if mid_block_type == UNetMidBlock2DCrossFrameInExistingAttn.__name__:
+        if mid_block_type == UNetMidBlock2DCrossFrameInExistingAttn.__name__: 
             self.mid_block = UNetMidBlock2DCrossFrameInExistingAttn(
                 transformer_layers_per_block=transformer_layers_per_block[i],
                 in_channels=block_out_channels[-1],
@@ -811,9 +811,9 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         src: UNet2DConditionModel,
         load_weights: bool = True,
         down_block_types: Tuple[str] = (
-            CrossFrameInExistingAttnDownBlock2D.__name__,
-            CrossFrameInExistingAttnDownBlock2D.__name__,
-            CrossFrameInExistingAttnDownBlock2D.__name__,
+            CrossFrameInExistingAttnDownBlock2D.__name__, # CrossAttnDownBlock2D.__name__,
+            CrossFrameInExistingAttnDownBlock2D.__name__, # CrossAttnDownBlock2D.__name__,
+            CrossFrameInExistingAttnDownBlock2D.__name__, # CrossAttnDownBlock2D.__name__,
             DownBlock2D.__name__,
         ),
         mid_block_type: Optional[str] = UNetMidBlock2DCrossFrameInExistingAttn.__name__,
@@ -913,7 +913,9 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                 if down_block_types[i] == CrossFrameInExistingAttnDownBlock2D.__name__:
                     # construct block from source by copying those weights that should be re-used
                     # initialize other weights randomly
-                    if isinstance(b, CrossAttnDownBlock2D):
+                    if isinstance(b, CrossAttnDownBlock2D): # this is default model for built-in Unet2DContionModel
+                                                            # Since we first initialized unit with built-in Unet2DContionModel,
+                                                            # we check if the block is CrossAttnDownBlock2D and if so, we reload it with CrossFrameInExistingAttnDownBlock2D
                         new_block = CrossFrameInExistingAttnDownBlock2D.from_source(
                             b,
                             load_weights=load_weights,
@@ -946,10 +948,13 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                         # TODO: support also construct from DownBlock2D, e.g. does not have any attention --> initialize them from scratch as well
                         raise NotImplementedError(f"cannot construct from_source for block of type: {type(b)}")
                 else:
-                    cf_unet.down_blocks[i].load_state_dict(b.state_dict())
+                    # print("Check default down block type")
+                    # exit(0)
+                    cf_unet.down_blocks[i].load_state_dict(b.state_dict()) # train_small 에서는 CrossFrameInExistingAttnDownBlock2D 가 아닌 CrossAttnDownBlock2D 로 들어옴
+                                                                           # CrossAttnDownBlock2D는 기본모델이라 load_state_dict로 불러옴
 
             # mid_block
-            if mid_block_type == UNetMidBlock2DCrossFrameInExistingAttn.__name__:
+            if mid_block_type == UNetMidBlock2DCrossFrameInExistingAttn.__name__: # this is used for train_small
                 if isinstance(src.mid_block, UNetMidBlock2DCrossAttn):
                     new_block = UNetMidBlock2DCrossFrameInExistingAttn.from_source(
                         src.mid_block,
@@ -1293,7 +1298,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         Args:
             sample (`torch.FloatTensor`): (batch, channel, height, width) noisy inputs tensor
             timestep (`torch.FloatTensor` or `float` or `int`): (batch) timesteps
-            encoder_hidden_states (`torch.FloatTensor`): (batch, sequence_length, feature_dim) encoder hidden states
+            encoder_hidden_states (`torch.FloatTensor`): (batch, sequence_length, feature_dim) encoder hidden states. Think of this as text embedding
             encoder_attention_mask (`torch.Tensor`):
                 (batch, sequence_length) cross-attention mask, applied to encoder_hidden_states. True = keep, False =
                 discard. Mask will be converted into a bias, which adds large negative values to attention scores
@@ -1371,13 +1376,20 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         # broadcast to batch dimension in a way that's compatible with ONNX/Core ML
         timesteps = timesteps.expand(sample.shape[0])
 
-        if n_known_images > 0:
+        # I think this is the case for test step
+        # The reason this block activate only when test step is because during training, the timesteps are set accordingly to p1,p2 possibilities while 
+        # during test step, we want to set timestep to 0 for n_known_images where if n_known_images == 1, it's single image 3D reconstruction.
+        if n_known_images > 0: 
+            # print("Confirm not running in training mode")
             timesteps = timesteps.clone()
             timesteps = expand_batch(timesteps, n_images_per_batch)
             timesteps[:, 0:n_known_images] = 0
             timesteps = collapse_batch(timesteps)
             #print(f"set timestep 0 for n_known_images={n_known_images} -->", timesteps, timesteps.shape)
 
+        # print("Check point")
+        # exit(0)
+        
         t_emb = self.time_proj(timesteps)
 
         # `Timesteps` does not contain any weights and will always return f32 tensors
@@ -1405,7 +1417,10 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                 emb = torch.cat([emb, class_emb], dim=-1)
             else:
                 emb = emb + class_emb
-
+        
+        # print(f'check self.config.addition_embed_type: {self.config.addition_embed_type}') # None
+        # exit(0)
+        
         if self.config.addition_embed_type == "text":
             aug_emb = self.add_embedding(encoder_hidden_states)
         elif self.config.addition_embed_type == "text_image":
@@ -1495,12 +1510,17 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
             unproj_reproj_kwargs = None
 
         # 3. down
-
         is_controlnet = mid_block_additional_residual is not None and down_block_additional_residuals is not None
         is_adapter = mid_block_additional_residual is None and down_block_additional_residuals is not None
 
         down_block_res_samples = (sample,)
         for downsample_block in self.down_blocks:
+            # DEFAULT_DOWN_BLOCK_TYPES: Tuple[str] = (
+            # CrossAttnDownBlock2D.__name__,
+            # CrossAttnDownBlock2D.__name__,
+            # CrossAttnDownBlock2D.__name__,
+            # DownBlock2D.__name__,
+            # )
             if hasattr(downsample_block, "has_cross_attention") and downsample_block.has_cross_attention:
                 # For t2i-adapter CrossAttnDownBlock2D
                 additional_residuals = {}
@@ -1633,7 +1653,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                 rendered_mask_output,
                 unproj_reproj_kwargs,
             )
-
+        # For tiny model, I think this is the case
         return UNet3DConsistencyOutput(
             unet_sample=sample,
             rendered_depth=rendered_depth_output,
