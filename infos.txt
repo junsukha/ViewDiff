@@ -1,0 +1,2281 @@
+replace 하기 이전 info
+
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b95a20>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b95c60>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b965c0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b96680>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b97610>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b97790>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b97fd0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c73b97d30>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f602b0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f60730>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f61330>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f615a0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f904c0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f90820>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f90ee0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f91210>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f91660>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f919c0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f92350>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f924d0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f92c80>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f92e00>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f936a0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f937f0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c976634f0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0cb02f9030>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66fca4d0>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66fca9e0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66fc8a30>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66fc8ee0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f62590>}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <diffusers.models.attention_processor.AttnProcessor2_0 object at 0x7f0c66f627a0>}
+
+
+
+
+
+
+
+
+
+
+replace 한 후 info.. 아마도
+#####################################################################################
+#####################################################################################
+
+ {'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6fd690>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6ff0d0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6fec80>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6fd480>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6fd810>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6ffb80>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6ff8e0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6ff550>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6fcf40>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd6ffd90>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd260160>}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd2604f0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd260880>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd260c10>}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd260fa0>}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7fa1fd261330>}
+
+
+# 위에 mid_block.attentions.0.transformer_blocks.0.attn2.processor 의 proc이 PoseCondLoRAAttnProcessor2_0 가 
+아닌 이유는 아직 `add_pose_cond_to_attention_layers`를 call 안했기 때문.
+
+
+
+#################################################################################################################################################
+#################################################################################################################################################
+
+밑에는 `add_pose_cond_to_attention_layers`부른 이후 값.
+(처음부분 잘림. mid block은 중간즈음에 잇음. 잘린 이유는 PoseCondLoRAAttnProcessor2_0로 replace되면서
+CrossFrameAttentionProcessor2_0 랑 번갈아서 module이 나오기 때문에 내용이 더 많아짐)
+
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 640,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 640,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 320,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 320,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+{'cross_attention_dim': None,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': True,
+ 'is_cross_attention': False,
+ 'is_self_attention': True,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn1.processor',
+ 'proc': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'cross_attention_dim': 1024,
+ 'hidden_size': 1280,
+ 'is_cfa_attention': False,
+ 'is_cross_attention': True,
+ 'is_self_attention': False,
+ 'name': 'mid_block.attentions.0.transformer_blocks.0.attn2.processor',
+ 'proc': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+)}
+{'down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'mid_block.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'mid_block.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1290, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=650, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor': PoseCondLoRAAttnProcessor2_0(
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=330, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1034, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+)}
+
+
+
+
+
+
+
+
+
+
+
+#################################################################################################################################################
+#################################################################################################################################################
+
+
+pprint(unet_attn_procs) 이건 processor만  보여줌
+
+
+ {'down_blocks.0.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.0.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a52a0>,
+ 'down_blocks.0.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'down_blocks.0.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a6e60>,
+ 'down_blocks.1.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a6a10>,
+ 'down_blocks.1.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'down_blocks.1.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a5210>,
+ 'down_blocks.2.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a5510>,
+ 'down_blocks.2.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'down_blocks.2.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a7910>,
+ 'mid_block.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'mid_block.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f20fc5b90c0>,
+ 'up_blocks.1.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a7670>,
+ 'up_blocks.1.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a72e0>,
+ 'up_blocks.1.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=1298, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=1280, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=1280, bias=False)
+  )
+),
+ 'up_blocks.1.attentions.2.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a4c40>,
+ 'up_blocks.2.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a7b20>,
+ 'up_blocks.2.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f21200a7eb0>,
+ 'up_blocks.2.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=658, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=640, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=640, bias=False)
+  )
+),
+ 'up_blocks.2.attentions.2.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f20fc5b8280>,
+ 'up_blocks.3.attentions.0.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.0.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f20fc5b8610>,
+ 'up_blocks.3.attentions.1.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.1.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f20fc5b89a0>,
+ 'up_blocks.3.attentions.2.transformer_blocks.0.attn1.processor': CrossFrameAttentionProcessor2_0(
+  (temb_proj): Sequential(
+    (0): Linear(in_features=1280, out_features=640, bias=True)
+    (1): ELU(alpha=1.0, inplace=True)
+    (2): Linear(in_features=640, out_features=8, bias=True)
+    (3): ELU(alpha=1.0, inplace=True)
+  )
+  (to_q_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_k_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_v_lora): LoRALinearLayer(
+    (down): Linear(in_features=338, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+  (to_out_lora): LoRALinearLayer(
+    (down): Linear(in_features=320, out_features=64, bias=False)
+    (up): Linear(in_features=64, out_features=320, bias=False)
+  )
+),
+ 'up_blocks.3.attentions.2.transformer_blocks.0.attn2.processor': <viewdiff.model.custom_attention_processor.CustomAttnProcessor2_0 object at 0x7f20fc5b8d30>}

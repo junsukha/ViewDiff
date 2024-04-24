@@ -1,0 +1,537 @@
+self.down_blocks: ModuleList(                                                                                                                                                                            | 0/50 [00:00<?, ?it/s]
+  (0): CrossAttnDownBlock2D(
+    (attentions): ModuleList(
+      (0-1): 2 x Transformer2DModel(
+        (norm): GroupNorm(32, 320, eps=1e-06, affine=True)
+        (proj_in): LoRACompatibleLinear(in_features=320, out_features=320, bias=True)
+        (transformer_blocks): ModuleList(
+          (0): BasicTransformerBlock(
+            (norm1): LayerNorm((320,), eps=1e-05, elementwise_affine=True)
+            (attn1): Attention(
+              (to_q): LoRACompatibleLinear(in_features=320, out_features=320, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=320, out_features=320, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=320, out_features=320, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=320, out_features=320, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): CrossFrameAttentionProcessor2_0(
+                (temb_proj): Sequential(
+                  (0): Linear(in_features=1280, out_features=640, bias=True)
+                  (1): ELU(alpha=1.0, inplace=True)
+                  (2): Linear(in_features=640, out_features=8, bias=True)
+                  (3): ELU(alpha=1.0, inplace=True)
+                )
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=338, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=338, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=338, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=320, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+              )
+            )
+            (norm2): LayerNorm((320,), eps=1e-05, elementwise_affine=True)
+            (attn2): Attention(
+              (to_q): LoRACompatibleLinear(in_features=320, out_features=320, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=1024, out_features=320, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=1024, out_features=320, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=320, out_features=320, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): PoseCondLoRAAttnProcessor2_0(
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=330, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=320, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=320, bias=False)
+                )
+              )
+            )
+            (norm3): LayerNorm((320,), eps=1e-05, elementwise_affine=True)
+            (ff): FeedForward(
+              (net): ModuleList(
+                (0): GEGLU(
+                  (proj): LoRACompatibleLinear(in_features=320, out_features=2560, bias=True)
+                )
+                (1): Dropout(p=0.0, inplace=False)
+                (2): LoRACompatibleLinear(in_features=1280, out_features=320, bias=True)
+              )
+            )
+          )
+        )
+        (proj_out): LoRACompatibleLinear(in_features=320, out_features=320, bias=True)
+      )
+    )
+    (resnets): ModuleList(
+      (0-1): 2 x ResnetBlock2D(
+        (norm1): GroupNorm(32, 320, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=320, bias=True)
+        (norm2): GroupNorm(32, 320, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(320, 320, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+      )
+    )
+    (downsamplers): ModuleList(
+      (0): Downsample2D(
+        (conv): LoRACompatibleConv(320, 320, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+    )
+  )
+  (1): CrossAttnDownBlock2D(
+    (attentions): ModuleList(
+      (0-1): 2 x Transformer2DModel(
+        (norm): GroupNorm(32, 640, eps=1e-06, affine=True)
+        (proj_in): LoRACompatibleLinear(in_features=640, out_features=640, bias=True)
+        (transformer_blocks): ModuleList(
+          (0): BasicTransformerBlock(
+            (norm1): LayerNorm((640,), eps=1e-05, elementwise_affine=True)
+            (attn1): Attention(
+              (to_q): LoRACompatibleLinear(in_features=640, out_features=640, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=640, out_features=640, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=640, out_features=640, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=640, out_features=640, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): CrossFrameAttentionProcessor2_0(
+                (temb_proj): Sequential(
+                  (0): Linear(in_features=1280, out_features=640, bias=True)
+                  (1): ELU(alpha=1.0, inplace=True)
+                  (2): Linear(in_features=640, out_features=8, bias=True)
+                  (3): ELU(alpha=1.0, inplace=True)
+                )
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=658, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=658, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=658, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=640, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+              )
+            )
+            (norm2): LayerNorm((640,), eps=1e-05, elementwise_affine=True)
+            (attn2): Attention(
+              (to_q): LoRACompatibleLinear(in_features=640, out_features=640, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=1024, out_features=640, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=1024, out_features=640, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=640, out_features=640, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): PoseCondLoRAAttnProcessor2_0(
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=650, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=640, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=640, bias=False)
+                )
+              )
+            )
+            (norm3): LayerNorm((640,), eps=1e-05, elementwise_affine=True)
+            (ff): FeedForward(
+              (net): ModuleList(
+                (0): GEGLU(
+                  (proj): LoRACompatibleLinear(in_features=640, out_features=5120, bias=True)
+                )
+                (1): Dropout(p=0.0, inplace=False)
+                (2): LoRACompatibleLinear(in_features=2560, out_features=640, bias=True)
+              )
+            )
+          )
+        )
+        (proj_out): LoRACompatibleLinear(in_features=640, out_features=640, bias=True)
+      )
+    )
+    (resnets): ModuleList(
+      (0): ResnetBlock2D(
+        (norm1): GroupNorm(32, 320, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(320, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=640, bias=True)
+        (norm2): GroupNorm(32, 640, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+        (conv_shortcut): LoRACompatibleConv(320, 640, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (1): ResnetBlock2D(
+        (norm1): GroupNorm(32, 640, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=640, bias=True)
+        (norm2): GroupNorm(32, 640, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(640, 640, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+      )
+    )
+    (downsamplers): ModuleList(
+      (0): Downsample2D(
+        (conv): LoRACompatibleConv(640, 640, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+    )
+  )
+  (2): CrossAttnDownBlock2D(
+    (attentions): ModuleList(
+      (0-1): 2 x Transformer2DModel(
+        (norm): GroupNorm(32, 1280, eps=1e-06, affine=True)
+        (proj_in): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+        (transformer_blocks): ModuleList(
+          (0): BasicTransformerBlock(
+            (norm1): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (attn1): Attention(
+              (to_q): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): CrossFrameAttentionProcessor2_0(
+                (temb_proj): Sequential(
+                  (0): Linear(in_features=1280, out_features=640, bias=True)
+                  (1): ELU(alpha=1.0, inplace=True)
+                  (2): Linear(in_features=640, out_features=8, bias=True)
+                  (3): ELU(alpha=1.0, inplace=True)
+                )
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1298, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1298, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1298, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1280, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+              )
+            )
+            (norm2): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (attn2): Attention(
+              (to_q): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+              (to_k): LoRACompatibleLinear(in_features=1024, out_features=1280, bias=False)
+              (to_v): LoRACompatibleLinear(in_features=1024, out_features=1280, bias=False)
+              (to_out): ModuleList(
+                (0): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+                (1): Dropout(p=0.0, inplace=False)
+              )
+              (processor): PoseCondLoRAAttnProcessor2_0(
+                (to_q_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1290, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_k_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_v_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1034, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+                (to_out_lora): LoRALinearLayer(
+                  (down): Linear(in_features=1280, out_features=64, bias=False)
+                  (up): Linear(in_features=64, out_features=1280, bias=False)
+                )
+              )
+            )
+            (norm3): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+            (ff): FeedForward(
+              (net): ModuleList(
+                (0): GEGLU(
+                  (proj): LoRACompatibleLinear(in_features=1280, out_features=10240, bias=True)
+                )
+                (1): Dropout(p=0.0, inplace=False)
+                (2): LoRACompatibleLinear(in_features=5120, out_features=1280, bias=True)
+              )
+            )
+          )
+        )
+        (proj_out): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+      )
+    )
+    (resnets): ModuleList(
+      (0): ResnetBlock2D(
+        (norm1): GroupNorm(32, 640, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(640, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+        (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+        (conv_shortcut): LoRACompatibleConv(640, 1280, kernel_size=(1, 1), stride=(1, 1))
+      )
+      (1): ResnetBlock2D(
+        (norm1): GroupNorm(32, 1280, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+        (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+      )
+    )
+    (downsamplers): ModuleList(
+      (0): Downsample2D(
+        (conv): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+    )
+  )
+  (3): DownBlock2D(
+    (resnets): ModuleList(
+      (0-1): 2 x ResnetBlock2D(
+        (norm1): GroupNorm(32, 1280, eps=1e-05, affine=True)
+        (conv1): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+        (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
+        (dropout): Dropout(p=0.0, inplace=False)
+        (conv2): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (nonlinearity): SiLU()
+      )
+    )
+  )
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+self.mid_block
+
+UNetMidBlock2DCrossFrameInExistingAttn(                                                                                                                                                  | 0/50 [00:00<?, ?it/s]
+  (attentions): ModuleList(
+    (0): Transformer2DSelfAttnCrossAttnCrossFrameAttnModel(
+      (norm): GroupNorm(32, 1280, eps=1e-06, affine=True)
+      (proj_in): Linear(in_features=1280, out_features=1280, bias=True)
+      (transformer_blocks): ModuleList(
+        (0): BasicTransformerWithCrossFrameAttentionBlock(
+          (norm1): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          (attn1): Attention(
+            (to_q): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+            (to_k): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+            (to_v): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+            (to_out): ModuleList(
+              (0): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+              (1): Dropout(p=0.0, inplace=False)
+            )
+            (processor): CrossFrameAttentionProcessor2_0(
+              (temb_proj): Sequential(
+                (0): Linear(in_features=1280, out_features=640, bias=True)
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Linear(in_features=640, out_features=8, bias=True)
+                (3): ELU(alpha=1.0, inplace=True)
+              )
+              (to_q_lora): LoRALinearLayer(
+                (down): Linear(in_features=1298, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_k_lora): LoRALinearLayer(
+                (down): Linear(in_features=1298, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_v_lora): LoRALinearLayer(
+                (down): Linear(in_features=1298, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_out_lora): LoRALinearLayer(
+                (down): Linear(in_features=1280, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+            )
+          )
+          (norm2): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          (attn2): Attention(
+            (to_q): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=False)
+            (to_k): LoRACompatibleLinear(in_features=1024, out_features=1280, bias=False)
+            (to_v): LoRACompatibleLinear(in_features=1024, out_features=1280, bias=False)
+            (to_out): ModuleList(
+              (0): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+              (1): Dropout(p=0.0, inplace=False)
+            )
+            (processor): PoseCondLoRAAttnProcessor2_0(
+              (to_q_lora): LoRALinearLayer(
+                (down): Linear(in_features=1290, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_k_lora): LoRALinearLayer(
+                (down): Linear(in_features=1034, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_v_lora): LoRALinearLayer(
+                (down): Linear(in_features=1034, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+              (to_out_lora): LoRALinearLayer(
+                (down): Linear(in_features=1280, out_features=64, bias=False)
+                (up): Linear(in_features=64, out_features=1280, bias=False)
+              )
+            )
+          )
+          (norm3): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          (ff): FeedForward(
+            (net): ModuleList(
+              (0): GEGLU(
+                (proj): LoRACompatibleLinear(in_features=1280, out_features=10240, bias=True)
+              )
+              (1): Dropout(p=0.0, inplace=False)
+              (2): LoRACompatibleLinear(in_features=5120, out_features=1280, bias=True)
+            )
+          )
+          (norm_cf): LayerNorm((1280,), eps=1e-05, elementwise_affine=True)
+          (unproj_reproj_layer): UnprojReprojLayer(
+            (blocks_3d): ModuleList(
+              (0): ResnetBlock3D(
+                (norm1): GroupNorm(16, 16, eps=1e-05, affine=True)
+                (conv1): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (time_emb_proj): Linear(in_features=1280, out_features=16, bias=True)
+                (norm2): GroupNorm(16, 16, eps=1e-05, affine=True)
+                (dropout): Dropout(p=0.0, inplace=False)
+                (conv2): Conv3d(16, 16, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (nonlinearity): SiLU()
+              )
+            )
+            (proj_in_2d): Sequential(
+              (0): ConvBlock(
+                (conv): Conv2d(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                (relu): ReLU()
+              )
+              (1): ConvBlock(
+                (conv): Conv2d(1280, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+                (relu): ReLU()
+              )
+              (2): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1))
+            )
+            (proj_out_2d_fg): Sequential(
+              (0): ConvBlock(
+                (conv): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1))
+                (relu): ReLU()
+              )
+              (1): ConvBlock(
+                (conv): Conv2d(16, 1280, kernel_size=(1, 1), stride=(1, 1))
+                (relu): ReLU()
+              )
+              (2): Conv2d(1280, 1280, kernel_size=(1, 1), stride=(1, 1))
+            )
+            (proj_out_2d_bg): Sequential(
+              (0): ConvBlock(
+                (conv): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1))
+                (relu): ReLU()
+              )
+              (1): ConvBlock(
+                (conv): Conv2d(16, 1280, kernel_size=(1, 1), stride=(1, 1))
+                (relu): ReLU()
+              )
+              (2): Conv2d(1280, 1280, kernel_size=(1, 1), stride=(1, 1))
+            )
+            (ibrnet_aggregator): IBRNet_Aggregator(
+              (ray_depth_encoder): Sequential(
+                (0): Conv3d(4, 8, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Conv3d(8, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (3): ELU(alpha=1.0, inplace=True)
+              )
+              (temb_encoder): Sequential(
+                (0): Linear(in_features=1280, out_features=640, bias=True)
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Linear(in_features=640, out_features=16, bias=True)
+                (3): ELU(alpha=1.0, inplace=True)
+              )
+              (base_fc): Sequential(
+                (0): Conv3d(48, 32, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Conv3d(32, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (3): ELU(alpha=1.0, inplace=True)
+              )
+              (vis_fc): Sequential(
+                (0): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Conv3d(16, 17, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (3): ELU(alpha=1.0, inplace=True)
+              )
+              (vis_fc2): Sequential(
+                (0): Conv3d(16, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (1): ELU(alpha=1.0, inplace=True)
+                (2): Conv3d(16, 1, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (3): Sigmoid()
+              )
+              (statistics_out): Sequential(
+                (0): Conv3d(33, 16, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+                (1): ELU(alpha=1.0, inplace=True)
+              )
+            )
+            (linear_ray): Linear(in_features=3, out_features=16, bias=True)
+            (volume_renderer): FastplaneModule()
+          )
+        )
+      )
+      (proj_out): Linear(in_features=1280, out_features=1280, bias=True)
+    )
+  )
+  (resnets): ModuleList(
+    (0-1): 2 x ResnetBlock2D(
+      (norm1): GroupNorm(32, 1280, eps=1e-05, affine=True)
+      (conv1): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (time_emb_proj): LoRACompatibleLinear(in_features=1280, out_features=1280, bias=True)
+      (norm2): GroupNorm(32, 1280, eps=1e-05, affine=True)
+      (dropout): Dropout(p=0.0, inplace=False)
+      (conv2): LoRACompatibleConv(1280, 1280, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (nonlinearity): SiLU()
+    )
+  )
+)
