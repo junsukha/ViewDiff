@@ -395,15 +395,16 @@ def update_model(finetune_config: FinetuneConfig, unet: UNet2DConditionModel):
         ):
             if finetune_config.cross_frame_attention.mode == "pretrained": # this is the case for train_small.sh
                 # overwrite the settings for cfa to not create the cfa layers
-                # instead we want to re-use the sa layers for it
+                # instead we want to re-use the sa layers for it (sa = self attention)
                 if finetune_config.cross_frame_attention.unproj_reproj_mode == "with_cfa":
                     finetune_config.cross_frame_attention.unproj_reproj_mode = "only_unproj_reproj" # "only_unproj_reproj": use the layer instead of cross-frame-attention.
-
+                                                                                                    # Instead, n_cfa_down_blocks and n_cfa_up_blocks are used to specify the number of layers to replace with cross-frame-attention.
             unet = UNet2DConditionCrossFrameInExistingAttnModel.from_source(
                 src=unet,
                 load_weights=True,
                 down_block_types=get_down_block_types(finetune_config.cross_frame_attention.n_cfa_down_blocks),
                 mid_block_type=get_mid_block_type(not finetune_config.cross_frame_attention.no_cfa_in_mid_block), # for tiny monel, this uses cross frame (just like in the original model)
+                                                                                                                  # middle block 에서 cfa 쓰는건 아님. proj layer만 쓰임.
                 up_block_types=get_up_block_types(finetune_config.cross_frame_attention.n_cfa_up_blocks),
                 n_input_images=finetune_config.model.n_input_images,
                 to_k_other_frames=finetune_config.cross_frame_attention.to_k_other_frames,
@@ -414,7 +415,7 @@ def update_model(finetune_config: FinetuneConfig, unet: UNet2DConditionModel):
                 temb_out_size=8,
                 pose_cond_dim=finetune_config.model.pose_cond_dim,
                 rank=finetune_config.model.pose_cond_lora_rank,
-                unproj_reproj_mode=finetune_config.cross_frame_attention.unproj_reproj_mode,
+                unproj_reproj_mode=finetune_config.cross_frame_attention.unproj_reproj_mode, # not `with_cfa` but `only_unproj_reproj`
                 dim_3d_grid=finetune_config.cross_frame_attention.dim_3d_grid,
                 dim_3d_latent=finetune_config.cross_frame_attention.dim_3d_latent,
                 n_novel_images=finetune_config.cross_frame_attention.n_novel_images,
@@ -428,6 +429,7 @@ def update_model(finetune_config: FinetuneConfig, unet: UNet2DConditionModel):
             )
 
             if finetune_config.cross_frame_attention.mode == "pretrained":
+                # this is where CrossFrameAttentionProcessor2_0 is used as a attention processor
                 # TODO: allow to only replace the layers as specified in finetune_config.cross_frame_attention.n_cfa_down_blocks
                 replace_self_attention_with_cross_frame_attention(
                     unet=unet,
@@ -453,7 +455,7 @@ def update_model(finetune_config: FinetuneConfig, unet: UNet2DConditionModel):
             unet,
             rank=finetune_config.model.pose_cond_lora_rank,
             pose_cond_dim=finetune_config.model.pose_cond_dim,
-            only_cross_attention="sa" not in finetune_config.model.pose_cond_mode,
+            only_cross_attention="sa" not in finetune_config.model.pose_cond_mode, # sa-ca in tiny_model
         )
 
     return unet, unet_lora_parameters

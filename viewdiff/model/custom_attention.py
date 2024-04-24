@@ -139,7 +139,9 @@ class BasicTransformerWithCrossFrameAttentionBlock(BasicTransformerBlock):
             else:
                 self.norm_cf = nn.LayerNorm(dim, elementwise_affine=norm_elementwise_affine)
 
-            if use_cfa:
+            if use_cfa: # this is false
+                # print("Check is use_cfa is activated") # not activated
+                # exit(0)
                 self.attn_cf = Attention(
                     query_dim=dim,
                     heads=num_attention_heads,
@@ -404,6 +406,7 @@ class BasicTransformerWithCrossFrameAttentionBlock(BasicTransformerBlock):
         class_labels: Optional[torch.LongTensor] = None,
         unproj_reproj_kwargs: Dict[str, Any] = None,
     ):
+        # print("Check forward function") # works
         # Notice that normalization is always applied before the real computation in the following blocks.
         # 1. Self-Attention
         if self.use_ada_layer_norm:
@@ -416,7 +419,8 @@ class BasicTransformerWithCrossFrameAttentionBlock(BasicTransformerBlock):
             norm_hidden_states = self.norm1(hidden_states)
 
         cross_attention_kwargs = cross_attention_kwargs if cross_attention_kwargs is not None else {}
-        attn_output = self.attn1(
+        # print(f'self.attn1: {self.attn1}') # Attention with CrossFrameAttentionProcessor2_0 processor
+        attn_output = self.attn1( # from parent class BasicTransformerBlock
             norm_hidden_states,
             encoder_hidden_states=encoder_hidden_states if self.only_cross_attention else None,
             attention_mask=attention_mask,
@@ -427,12 +431,14 @@ class BasicTransformerWithCrossFrameAttentionBlock(BasicTransformerBlock):
         hidden_states = attn_output + hidden_states
 
         # 2. Cross-Attention
-        if self.attn2 is not None:
+        # print(f'self.attn2: {self.attn2}')
+        # exit(0)
+        if self.attn2 is not None: # Attention with PoseCondLoRAAttnProcessor2_0 processor
             norm_hidden_states = (
                 self.norm2(hidden_states, timestep) if self.use_ada_layer_norm else self.norm2(hidden_states)
             )
-
-            attn_output = self.attn2(
+            # print("From here...")
+            attn_output = self.attn2( # from BasicTransformerBlock
                 norm_hidden_states,
                 encoder_hidden_states=encoder_hidden_states,
                 attention_mask=encoder_attention_mask,
@@ -455,6 +461,8 @@ class BasicTransformerWithCrossFrameAttentionBlock(BasicTransformerBlock):
             if self.use_cfa:
                 # perform cross-frame-attention
                 cross_attention_kwargs = cross_attention_kwargs if cross_attention_kwargs is not None else {}
+                # print("Check cross frame attentinon layer") # not activated
+                # exit(0)
                 attn_output = self.attn_cf(
                     norm_hidden_states,
                     encoder_hidden_states=encoder_hidden_states if self.only_cross_attention else None,

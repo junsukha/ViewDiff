@@ -45,3 +45,8 @@ latents 의 batch size가 3이니깐. 이미지 3장을 가져와서 (dataset에
 
 \
 \
+`train_small.sh` doesn't use cfa layer. Instead, self attention layer is used.\
+`finetune_config.cross_frame_attention.unproj_reproj_mode = "only_unproj_reproj" # "only_unproj_reproj": use the layer instead of cross-frame-attention.`
+\
+\
+`CrossFrameAttentionProcessor2_0`을 쓴다고 해서 

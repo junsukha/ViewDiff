@@ -169,7 +169,7 @@ def get_attn_processor_infos(unet: UNet2DConditionModel):
                 "is_cfa_attention": is_cfa_attention,
                 "is_self_attention": is_self_attention,
                 "cross_attention_dim": cross_attention_dim,
-                "name": name,
+                "name": name, # guess this is typo
                 "hidden_size": hidden_size,
                 "proc": proc,
             }
@@ -179,7 +179,7 @@ def get_attn_processor_infos(unet: UNet2DConditionModel):
 
 
 def replace_self_attention_with_cross_frame_attention(
-    unet: UNet2DConditionModel,
+    unet: UNet2DConditionModel, # UNet2DConditionCrossFrameInExistingAttnModel is right one I think
     n_input_images: int = 5,
     to_k_other_frames: int = 0,
     with_self_attention: bool = True,
@@ -201,7 +201,11 @@ def replace_self_attention_with_cross_frame_attention(
         random_others (bool, optional): If True, will select the k_other_frames randomly, otherwise sequentially. Defaults to False.
     """
     infos = get_attn_processor_infos(unet)
-
+    # from pprint import pprint
+    # for info in infos:
+    #     pprint(info)
+    # pprint(f'infos: {infos}')
+    # exit(0)
     unet_attn_procs = {}
     unet_attn_parameters = []
     for info in infos:
@@ -223,14 +227,24 @@ def replace_self_attention_with_cross_frame_attention(
             unet_attn_procs[info["name"]] = module
             if hasattr(module, "parameters"):
                 unet_attn_parameters.extend(module.parameters())
-        elif info["is_cfa_attention"]:
+        elif info["is_cfa_attention"]: # not the case in small_train.sh
             unet_attn_procs[info["name"]] = info["proc"]  # is already fixed to support kwargs
         else:
             assert isinstance(info["proc"], AttnProcessor2_0)
             unet_attn_procs[info["name"]] = CustomAttnProcessor2_0()  # to fix unsupported kwargs in original
 
+    # from pprint import pprint
+    # pprint(unet_attn_procs)
+    # What happens here is, I think, that for example
+    # unet_attn_procs[mid_block.attentions.0.transformer_blocks.0.attn1.processor] = module
+    # where `mid_block.attentions.0.transformer_blocks.0.attn1.processor` is info["name"]
     unet.set_attn_processor(unet_attn_procs)
-
+    
+    
+    # for info in get_attn_processor_infos(unet):
+        # pprint(info)
+    # pprint(unet.attn_processors)
+    # exit(0)
     return unet_attn_procs, unet_attn_parameters
 
 
@@ -257,7 +271,12 @@ def add_pose_cond_to_attention_layers(
             unet_attn_parameters.extend(module.parameters())
 
     unet.set_attn_processor(unet_attn_procs)
-
+    
+    # from pprint import pprint
+    # for info in get_attn_processor_infos(unet):
+    #     pprint(info)
+    # pprint(unet.attn_processors)
+    # exit(0)
     return unet_attn_procs, unet_attn_parameters
 
 

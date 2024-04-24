@@ -34,7 +34,7 @@ def collapse_batch(x: torch.Tensor) -> torch.Tensor:
     other_dims = x.shape[2:]
     return x.reshape(n * k, *other_dims)
 
-
+# I think this one is custom
 class CrossFrameAttentionProcessor2_0(torch.nn.Module):
     """
     Processor for implementing scaled dot-product attention between multiple images within each batch (enabled by default if you're using PyTorch 2.0).
@@ -161,7 +161,7 @@ class CrossFrameAttentionProcessor2_0(torch.nn.Module):
                 N, heads, *self.attention_probs.shape[1:]
             )  # (N, attn.heads, query_dim, key_dim)
 
-    def __call__(
+    def __call__( # from self.processor(self, ...) here self argument is an instance of attention class.
         self,
         attn: Attention,
         hidden_states,
@@ -171,6 +171,9 @@ class CrossFrameAttentionProcessor2_0(torch.nn.Module):
         scale=1.0,
         pose_cond=None,
     ):
+        # print("Check cross frame attention processor") # activated
+        # print(attn) # CrossFrameAttentionProcessor2_0
+        # exit(0)
         residual = hidden_states
 
         if attn.spatial_norm is not None:

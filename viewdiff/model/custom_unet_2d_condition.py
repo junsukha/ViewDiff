@@ -107,6 +107,7 @@ def get_up_block_types(n_cross_frame_blocks: int = 3):
 
 def get_mid_block_type(use_cross_frame_block: bool = False):
     if use_cross_frame_block:
+        
         return CROSS_FRAME_MID_BLOCK_TYPE
     else:
         return DEFAULT_MID_BLOCK_TYPE
@@ -303,12 +304,14 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         # parse unproj_reproj_mode into flags
         self.n_input_images = n_input_images
         self.unproj_reproj_mode = unproj_reproj_mode
-        self.use_unproj_reproj_in_blocks = (
+        self.use_unproj_reproj_in_blocks = ( # true because unproj_reproj_mode is `only_unproj_reproj`
             unproj_reproj_mode == "only_unproj_reproj" or unproj_reproj_mode == "with_cfa"
         )
-        self.use_cfa = (
+        self.use_cfa = ( # In train_small, this is always False bc unproj_reproj_mode is `only_unproj_reproj`
             unproj_reproj_mode == "with_cfa" or unproj_reproj_mode == "none"
         )
+        # print(f'Check use_cfa: {self.use_cfa} \n Check unproj_reproj_mode: {unproj_reproj_mode}')
+        # exit(0)
 
         # Check inputs
         if len(down_block_types) != len(up_block_types):
@@ -833,7 +836,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         pose_cond_dim=10,
         rank=4,
         network_alpha=None,
-        unproj_reproj_mode: Literal["none", "only_unproj_reproj", "with_cfa"] = "none",
+        unproj_reproj_mode: Literal["none", "only_unproj_reproj", "with_cfa"] = "none", # "with_cfa" is default
         num_3d_layers: int = 1,
         dim_3d_latent: int = 32,
         dim_3d_grid: int = 64,
@@ -853,7 +856,9 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                 UNet model which weights are copied to the UNet2DConditionCrossFrameAttnModel where applicable. Note that all configuration options are also
                 copied where applicable.
         """
-
+        # print("check mid block type")
+        # print(mid_block_type) # UNetMidBlock2DCrossFrameInExistingAttn
+        # exit(0)
         # replace parts of src config that should be different
         config = {**src.config}
         config["down_block_types"] = down_block_types
@@ -885,6 +890,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         config["_class_name"] = cls.__name__
 
         # construct from new config
+        # print("From here...")
         cf_unet = cls(**config)
 
         if load_weights:
@@ -916,6 +922,7 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                     if isinstance(b, CrossAttnDownBlock2D): # this is default model for built-in Unet2DContionModel
                                                             # Since we first initialized unit with built-in Unet2DContionModel,
                                                             # we check if the block is CrossAttnDownBlock2D and if so, we reload it with CrossFrameInExistingAttnDownBlock2D
+                        
                         new_block = CrossFrameInExistingAttnDownBlock2D.from_source(
                             b,
                             load_weights=load_weights,
@@ -956,6 +963,9 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
             # mid_block
             if mid_block_type == UNetMidBlock2DCrossFrameInExistingAttn.__name__: # this is used for train_small
                 if isinstance(src.mid_block, UNetMidBlock2DCrossAttn):
+                    # print(f"check use_cfa: {cf_unet.use_cfa}") # False
+                    # exit(0)
+                    # In train_small.sh, we don't use cfa layers (sa layer used instead). We use proj layer tho.
                     new_block = UNetMidBlock2DCrossFrameInExistingAttn.from_source(
                         src.mid_block,
                         load_weights=load_weights,
@@ -970,8 +980,8 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
                         pose_cond_dim=pose_cond_dim,
                         rank=rank,
                         network_alpha=network_alpha,
-                        use_cfa=cf_unet.use_cfa,
-                        use_unproj_reproj=cf_unet.use_unproj_reproj_in_blocks,
+                        use_cfa=cf_unet.use_cfa, # false
+                        use_unproj_reproj=cf_unet.use_unproj_reproj_in_blocks, # true
                         num_3d_layers=num_3d_layers,
                         dim_3d_latent=dim_3d_latent,
                         dim_3d_grid=dim_3d_grid,
@@ -1514,6 +1524,8 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
         is_adapter = mid_block_additional_residual is None and down_block_additional_residuals is not None
 
         down_block_res_samples = (sample,)
+        # print(f'self.down_blocks: {self.down_blocks}')
+        # exit(0)
         for downsample_block in self.down_blocks:
             # DEFAULT_DOWN_BLOCK_TYPES: Tuple[str] = (
             # CrossAttnDownBlock2D.__name__,
@@ -1568,6 +1580,8 @@ class UNet2DConditionCrossFrameInExistingAttnModel(ModelMixin, ConfigMixin):
             down_block_res_samples = new_down_block_res_samples
 
         # 4. mid
+        # print(f'self.mid_block: {self.mid_block}')
+        # exit(0)
         if self.mid_block is not None:
             if isinstance(self.mid_block, UNetMidBlock2DCrossFrameInExistingAttn):
                 sample = self.mid_block(
